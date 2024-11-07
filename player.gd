@@ -25,9 +25,9 @@ func _input(event):
 		#print("diff: ", diff)
 
 func _physics_process(delta):
-	var accel = position.direction_to(target) * acc
-	velocity = min(accel, speed)
-	#code paste from a random forum
+	#var accel = position.direction_to(target) * acc
+	#velocity = min(accel, speed)
+	velocity = position.direction_to(target) * speed
 	var angle = (target - self.global_position).angle()
 	var rot_speed = delta * rotation_speed
 	self.global_rotation = lerp_angle(self.global_rotation, angle, rot_speed)
